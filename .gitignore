@@ -1,0 +1,8 @@
+config.json
+package-lock.json
+.env
+
+.vscode/
+node_modules/
+data/
+old/

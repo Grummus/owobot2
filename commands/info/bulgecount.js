@@ -12,5 +12,6 @@ module.exports = {
     description: "displays the number of bulges on a server.",
     run: async (client, message, args) => {
         //start making code you lazy shite
+        message.channel.send("under constwuction uwu");
     }
 }

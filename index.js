@@ -58,6 +58,10 @@ client.on("message", async message => {
             }
         });
     }; */
+
+    if(message.content.includes("bulge")) {
+        message.reply("OwO");
+    }
     
     if(!message.member) message.member = await message.guild.fetchMember(message);
 

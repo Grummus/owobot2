@@ -63,7 +63,25 @@ client.on("message", async message => {
         //message.reply("OwO");
         message.channel.sendMessage("OwO");
         console.log(`${message.author.username} said: ${message.content}`);
-    }
+        Server.findOne({
+            serverID: message.guild.id
+        }, (err, bulges) => {
+            if(err) console.log(err);
+            if(!bulges) {
+                const newServer = new Server({
+                    serverID: message.guild.id,
+                    bulges: 0,
+                    vores: 0,
+                    lastVore: new Date()
+                })
+
+                newServer.save().catch(err => console.log(err));
+            } else {
+                bulges.bulges = bulges.bulges + 1;
+                bulges.save().catch(err => console.log(err));
+            }
+        });
+    };
     
     if(!message.member) message.member = await message.guild.fetchMember(message);
 

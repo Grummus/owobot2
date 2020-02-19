@@ -62,6 +62,7 @@ client.on("message", async message => {
     if(message.content.includes("bulge")) {
         //message.reply("OwO");
         message.channel.sendMessage("OwO");
+        console.log(`${message.author.username} said: ${message.content}`);
     }
     
     if(!message.member) message.member = await message.guild.fetchMember(message);
@@ -77,7 +78,7 @@ client.on("message", async message => {
     if(command)
         command.run(client, message, args);
 
-    console.log(`${message.author.username} said: ${message.content}`);
+    //console.log(`${message.author.username} said: ${message.content}`);
 
 });
 

@@ -59,7 +59,7 @@ client.on("message", async message => {
         });
     }; */
 
-    if(message.content.includes("bulge")) {
+    if(message.content.includes("bulge") && !message.content.startsWith(prefix)) {
         //message.reply("OwO");
         message.channel.sendMessage("OwO");
         console.log(`${message.author.username} said: ${message.content}`);

@@ -70,7 +70,7 @@ client.on("message", async message => {
             if(!bulges) {
                 const newServer = new Server({
                     serverID: message.guild.id,
-                    bulges: 0,
+                    bulges: 1,
                     vores: 0,
                     lastVore: new Date()
                 })

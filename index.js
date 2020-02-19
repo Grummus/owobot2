@@ -35,30 +35,6 @@ client.on("message", async message => {
     if(message.author.bot) return;
     if(!message.guild) return;
 
-    //
-    /* if(!message.content.startsWith(prefix)){
-        let coinstoadd = 0;
-        console.log(coinstoadd + " coins");
-        PizzaRolls.findOne({
-            userID: message.author.id,
-            serverID: message.guild.id
-        }, (err, money) => {
-            if(err) console.log(err);
-            if(!money) {
-                const newMoney = new PizzaRolls({
-                    userID: message.author.id,
-                    serverID: message.guild.id,
-                    money: coinstoadd
-                })
-
-                newMoney.save().catch(err => console.log(err));
-            } else {
-                money.money = money.money + coinstoadd;
-                money.save().catch(err => console.log(err));
-            }
-        });
-    }; */
-
     if(message.content.includes("bulge") && !message.content.startsWith(prefix)) {
         //message.reply("OwO");
         message.channel.sendMessage("OwO");

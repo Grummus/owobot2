@@ -1,3 +1,4 @@
+// ye olde declaration of variables
 require('dotenv').config();
 const { Client, RichEmbed, Collection } = require("discord.js");
 const Discord = require('discord.js');
@@ -17,6 +18,7 @@ client.aliases = new Collection();
     require(`./handler/${handler}`)(client);
 });
 
+// login callback
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
 
@@ -29,6 +31,7 @@ client.on('ready', () => {
     })
 });
 
+// message callback
 client.on("message", async message => {
     const prefix = process.env.prefix;
 
@@ -39,10 +42,12 @@ client.on("message", async message => {
         //message.reply("OwO");
         message.channel.send("OwO");
         console.log(`${message.author.username} said: ${message.content}`);
+        //query the database
         Server.findOne({
             serverID: message.guild.id
         }, (err, bulges) => {
             if(err) console.log(err);
+            //make new entry for the server
             if(!bulges) {
                 const newServer = new Server({
                     serverID: message.guild.id,
@@ -53,12 +58,14 @@ client.on("message", async message => {
 
                 newServer.save().catch(err => console.log(err));
             } else {
+                //increment the bulgy wulgies owo!
                 bulges.bulges = bulges.bulges + 1;
                 bulges.save().catch(err => console.log(err));
             }
         });
     };
     
+    //command handler (no touch pls)
     if(!message.member) message.member = await message.guild.fetchMember(message);
 
     const args = message.content.slice(prefix.length).trim().split(/ +/g);

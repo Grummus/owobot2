@@ -12,6 +12,20 @@ module.exports = {
     description: "displays the number of bulges on a server.",
     run: async (client, message, args) => {
         //start making code you lazy shite
-        message.channel.send("under constwuction uwu");
+        Server.findOne({
+            serverID: message.guild.id
+        }, (err, bulges) => {
+            if(err) console.log(err);
+            let embed = new Discord.RichEmbed()
+            .setTitle(message.guild.name)
+            .setThumbnail(message.guild.iconURL)
+
+            if(!bulges) {
+                return message.channel.send("No bulges noticed yet UwU");
+            } else {
+                embed.addField("Bulges Noticed:", bulges.bulges, true);
+                return message.channel.send(embed);
+            }
+        });
     }
 }

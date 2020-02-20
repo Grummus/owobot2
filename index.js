@@ -37,7 +37,7 @@ client.on("message", async message => {
 
     if(message.content.includes("bulge") && !message.content.startsWith(prefix)) {
         //message.reply("OwO");
-        message.channel.sendMessage("OwO");
+        message.channel.send("OwO");
         console.log(`${message.author.username} said: ${message.content}`);
         Server.findOne({
             serverID: message.guild.id

@@ -1,8 +1,8 @@
 {
-  "name": "pizzaroll_bot",
+  "name": "owobot2",
   "version": "0.0.1",
-  "description": "A bot for trading Pizza Rolls",
-  "main": "bot.js",
+  "description": "A bot for noticing bulges owo!",
+  "main": "index.js",
   "dependencies": {
     "ascii-table": "0.0.9",
     "commander": "^4.0.1",

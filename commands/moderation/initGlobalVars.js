@@ -7,7 +7,7 @@ mongoose.connect(process.env.mongourl, {
 const GlobalData = require('../../models/globalData.js');
 
 module.exports = {
-    name: "initGlobalVars",
+    name: "initglobalvars",
     category: "moderation",
     description: "initializes the database with an entry for global bulges.",
     run: async (client, message, args) => {

@@ -6,10 +6,10 @@ const table = new ascii().setHeading("Phrase", "Load status");
 
 module.exports = (client) => {
     readdirSync("./phrases/").forEach(dir => {
-        const phrases = readdirSync(`./phrases/`).filter(f => f.endsWith(".js"));
+        const phrases = readdirSync(`./phrases/${dir}/`).filter(f => f.endsWith(".js"));
 
         for(let file of phrases) {
-            let pull = require(`../phrases/${file}`);
+            let pull = require(`../phrases/${dir}/${file}`);
 
             if(pull.name) {
                 client.phrases.set(pull.name, pull);

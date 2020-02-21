@@ -21,7 +21,7 @@ module.exports = {
             .setThumbnail(message.guild.iconURL)
 
             if(!bulges) {
-                return message.channel.send("No bulges noticed yet UwU");
+                return message.channel.send("No bulges noticed yet UwU (Recently migrated databases)");
             } else {
                 embed.addField("Bulges Noticed:", bulges.bulges, true);
                 return message.channel.send(embed);

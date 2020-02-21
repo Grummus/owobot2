@@ -5,6 +5,6 @@ const serverSchema = mongoose.Schema({
     bulges: Number,
     vores: Number,
     lastVore: Date
-})
+}, {collection: 'servers'})
 
 module.exports = mongoose.model("Server", serverSchema);

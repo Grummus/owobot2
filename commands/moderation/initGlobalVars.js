@@ -12,12 +12,13 @@ module.exports = {
     description: "initializes the database with an entry for global bulges.",
     run: async (client, message, args) => {
         const newGVar = new GlobalData({
+            title: "Global Data",
             servers: 1,
             bulges: 0,
             vores: 0,
             lastVore: new Date()
         })
-
+        console.log("Initializing Database!!!!");
         newGVar.save().catch(err => console.log(err));
     }
 }

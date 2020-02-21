@@ -10,6 +10,7 @@ mongoose.connect(process.env.mongourl, {
 });
 const PizzaRolls = require("./models/pizzaRolls.js");
 const Server = require("./models/server.js");
+const GlobalData = require("./models/globalData.js");
 
 client.commands = new Collection();
 client.aliases = new Collection();

@@ -58,12 +58,28 @@ client.on("message", async message => {
                 })
 
                 newServer.save().catch(err => console.log(err));
+                //increment number of servers
+                GlobalData.findOne({
+                    title: "Global Data"
+                }, (err, globalData) => {
+                    if(err) console.log(err);
+                    globalData.servers++
+                    globalData.save().catch(err => console.log(err));
+                })
             } else {
                 //increment the bulgy wulgies owo!
                 bulges.bulges = bulges.bulges + 1;
                 bulges.save().catch(err => console.log(err));
             }
         });
+        //increment global bulgy wulgies owo! (mr. worldwide)
+        GlobalData.findOne({
+            title: "Global Data"
+        }, (err, globalData) => {
+            if(err) console.log(err);
+            globalData.bulges++
+            globalData.save().catch(err => console.log(err));
+        })
     };
     
     //command handler (no touch pls)

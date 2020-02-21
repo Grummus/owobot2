@@ -15,7 +15,7 @@ module.exports = {
             servers: 1,
             bulges: 0,
             vores: 0,
-            lastVore: new Date
+            lastVore: new Date()
         })
 
         newGVar.save().catch(err => console.log(err));

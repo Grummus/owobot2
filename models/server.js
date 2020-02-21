@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const serverSchema = mongoose.Schema({
+    serverName: String,
     serverID: String,
     bulges: Number,
     vores: Number,

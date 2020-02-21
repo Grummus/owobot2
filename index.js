@@ -50,6 +50,7 @@ client.on("message", async message => {
             //make new entry for the server
             if(!bulges) {
                 const newServer = new Server({
+                    serverName: message.guild.name,
                     serverID: message.guild.id,
                     bulges: 1,
                     vores: 0,

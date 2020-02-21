@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const serverSchema = mongoose.Schema({
+const globalDataSchema = mongoose.Schema({
     servers: Number,
     bulges: Number,
     vores: Number,

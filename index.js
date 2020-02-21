@@ -7,6 +7,13 @@ const fs = require('fs');
 const mongoose = require('mongoose');
 mongoose.connect(process.env.mongourl, {
     useNewUrlParser: true
+}, function(err) {
+    if(err) {
+        console.log(err);
+        console.log("❌ oopsie woopsie, I failed to connect to the database uwu");
+        return process.exit();
+    }
+    console.log("✅ Connected to database!");
 });
 const Server = require("./models/server.js");
 const GlobalData = require("./models/globalData.js");

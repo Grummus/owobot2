@@ -10,7 +10,7 @@ mongoose.connect(process.env.mongourl, {
 }, function(err) {
     if(err) {
         console.log(err);
-        console.log("❌ oopsie woopsie, I failed to connect to the database uwu");
+        console.log("==== ❌ oopsie woopsie, I failed to connect to the database uwu ====");
         return process.exit();
     }
     console.log("✅ Connected to database!");
@@ -105,6 +105,10 @@ client.on("message", async message => {
 
     //console.log(`${message.author.username} said: ${message.content}`);
 
+});
+
+client.on('disconnect', async err => {
+    console.log("==== Oopsie woopsie, I make a fucky wucky! I disconnected with error code", err.code, "for reason:", err.reason, "====");
 });
 
 client.login(process.env.token);

@@ -8,7 +8,6 @@ const mongoose = require('mongoose');
 mongoose.connect(process.env.mongourl, {
     useNewUrlParser: true
 });
-const PizzaRolls = require("./models/pizzaRolls.js");
 const Server = require("./models/server.js");
 const GlobalData = require("./models/globalData.js");
 

@@ -66,7 +66,7 @@ client.on("message", async message => {
     //console.log(`${message.author.username} said: ${message.content}`);
     //phrase handler (holy shit this actually worked)
     if(!command) {
-        let words = message.content.split(/ +/g);
+        let words = message.content.toLowerCase().split(/ +/g);
         for(let word of words) {
             let phrase = client.phrases.get(word);
             if(phrase) {

@@ -78,6 +78,8 @@ client.on("message", async message => {
     let messageLowerCase = message.content.toLowerCase()
     if(messageLowerCase.includes("good bot")) message.channel.send("UwU");
     if(messageLowerCase.includes("bad bot")) message.channel.send("ಥ_ಥ");
+    if(messageLowerCase.includes("whats this") || messageLowerCase.includes("what's this"))
+        message.channel.send("owo?");
 
 });
 

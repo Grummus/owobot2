@@ -56,7 +56,7 @@ module.exports = {
 
                 vores.lastVore = new Date();
                 vores.save().catch(err => console.log(err));
-
+                console.log(message.author.username, "said:", message.content);
             }
         });
         //increment global vores owo! (mr. worldwide)

@@ -2,7 +2,7 @@ _"It's the worst thing I've ever added to my server."_
 -Hampoon
 =======
 
-## Currently down for maintenance, better functionality coming soon!
+## Currently undergoing maintenance, better functionality coming soon!
 
 [![Discord Bots](https://discordbots.org/api/widget/517201738646945803.svg)](https://discordbots.org/bot/517201738646945803)  
 

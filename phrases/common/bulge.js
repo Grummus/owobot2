@@ -14,7 +14,7 @@ module.exports = {
     run: async (client, message, args) => {
         //message.reply("OwO");
         message.channel.send("OwO");
-        console.log(`${message.author.username} said: ${message.content}`);
+        console.log(`${message.author.username} said: ${message.content} in server: ${message.guild.name}`);
         //query the database
         Server.findOne({
             serverID: message.guild.id

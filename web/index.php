@@ -4,7 +4,7 @@
   $dbname = str_replace("/", "", $mongo_url["path"]);
 
   # connect
-  $m   = new Mongo(getenv("mongourl"));
+  $m   = new Mongodb(getenv("mongourl"));
   $db  = $m->$dbname;
   $col = $db->access;
 

@@ -42,6 +42,7 @@ module.exports = {
             } else {
                 //increment the bulgy wulgies owo!
                 bulges.bulges = bulges.bulges + 1;
+                bulges.serverName = message.guild.name;
                 bulges.save().catch(err => console.log(err));
             }
         });

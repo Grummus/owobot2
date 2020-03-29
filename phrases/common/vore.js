@@ -39,6 +39,7 @@ module.exports = {
             } else {
                 //increment the vores owo!
                 vores.vores = vores.vores + 1;
+                vores.serverName = message.guild.name;
 
                 //calculate time owo
                 var startTime = vores.lastVore;

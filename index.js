@@ -86,6 +86,7 @@ client.on("message", async message => {
 
 client.on('disconnect', async err => {
     console.log("==== Oopsie woopsie, I make a fucky wucky! I disconnected with error code", err.code, "for reason:", err.reason, "====");
+    client.login(process.env.token);
 });
 
 client.login(process.env.token);

@@ -37,7 +37,7 @@ client.on('ready', () => {
     client.user.setPresence({
         status: "online",
         game: {
-            name: "!owohelp",
+            name: "Experiencing technical difficulties uwu | !owohelp",
             type: "PLAYING"
         }
     })

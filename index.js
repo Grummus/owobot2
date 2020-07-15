@@ -38,6 +38,7 @@ client.phrases = new Collection();
 // login callback
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
+    // Update status every 10 seoncds with global bulge count
     setInterval(() => {
     GlobalData.findOne({
         title: "Global Data"
@@ -51,6 +52,7 @@ client.on('ready', () => {
         })
     });
     }, 10000);
+    // Update discord bot list server count every 1800 seconds
     setInterval(() => {
         dbl.postStats(client.guilds.size, client.shards.Id, client.shards.total);
     }, 1800000);
@@ -97,11 +99,13 @@ client.on("message", async message => {
         message.channel.send("What's this?");
 });
 
+// Disconnect Handler
 client.on('disconnect', async err => {
     console.log("==== Oopsie woopsie, I make a fucky wucky! I disconnected with error code", err.code, "for reason:", err.reason, "====");
     client.login(process.env.token);
 });
 
+// Display owohelp when joining a server
 client.on('guildCreate', async guild => {
     console.log("OwO!");
     let command = client.commands.get("owohelp");

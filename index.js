@@ -33,14 +33,19 @@ client.phrases = new Collection();
 // login callback
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
-
-    client.user.setPresence({
-        status: "online",
-        game: {
-            name: "with your bulges owo | !owohelp",
-            type: "PLAYING"
-        }
-    })
+    setInterval(() => {
+    GlobalData.findOne({
+        title: "Global Data"
+    }, (err, globalData) => {
+        client.user.setPresence({
+            status: "online",
+            game: {
+                name: `with ${globalData.bulges} bulges owo | !owohelp`,
+                type: "PLAYING"
+            }
+        })
+    });
+    }, 10000);
 });
 
 // message callback

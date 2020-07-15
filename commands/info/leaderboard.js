@@ -11,7 +11,7 @@ module.exports = {
     category: "info",
     description: "Shows the global leaderboard",
     run: async (client, message, args) => {
-        if(args[0] == null) return message.channel.send("Usage: " + process.env.prefix + "leaderboards <bulges|forbiddenword>");
+        if(args[0] == null) return message.channel.send("Usage: " + process.env.prefix + "leaderboard <bulges|forbiddenword>");
         if(args[0] == "bulges") {
             Server.find({}).sort({bulges: -1}).exec(function (err, servers) {
                 if(err) console.log(err);

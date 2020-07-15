@@ -10,6 +10,7 @@ _"It's the worst thing I've ever added to my server."_
 The real question here, is what doesn't he do?  
 He keeps track of your bulges, so you don't have to!
 
+See the leaderboards with **!leaderboard**
 Count the bulges with **!bulgecount**  
 See global stats with **!globalbulgecount**
 

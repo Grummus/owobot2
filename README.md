@@ -4,7 +4,9 @@ _"It's the worst thing I've ever added to my server."_
 
 ## Currently undergoing maintenance, better functionality coming soon!
 
-[![Discord Bots](https://discordbots.org/api/widget/517201738646945803.svg)](https://discordbots.org/bot/517201738646945803)  
+[![Discord Bots](https://top.gg/api/widget/status/517201738646945803.svg)](https://top.gg/bot/517201738646945803)
+[![Discord Bots](https://top.gg/api/widget/lib/517201738646945803.svg)](https://top.gg/bot/517201738646945803)
+[![Discord Bots](https://top.gg/api/widget/owner/517201738646945803.svg)](https://top.gg/bot/517201738646945803)
 
 # Info:
 The real question here, is what doesn't he do?  

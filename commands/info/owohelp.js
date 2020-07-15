@@ -21,7 +21,7 @@ module.exports = {
         embed.addField(process.env.prefix + "bulgecount", "Displays the amount of bulges on your server");
         embed.addField(process.env.prefix + "globalbulgecount", "Shows how many bulges I've seen on all the servers I'm in!~");
         embed.addField(process.env.prefix + "leaderboard <bulges|forbiddenword>", "Get a load of these degenerates!");
-        embed.setFooter("Made by " + grummus.tag, grummus.displayAvatarURL);
+        embed.setFooter("Made by " + grummus.username, grummus.displayAvatarURL);
         message.channel.send(embed);
 
     }

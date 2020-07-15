@@ -12,12 +12,15 @@ _"It's the worst thing I've ever added to my server."_
 The real question here, is what doesn't he do?  
 He keeps track of your bulges, so you don't have to!
 
-See the leaderboards with **!leaderboard**  
-Count the bulges with **!bulgecount**  
-See global stats with **!globalbulgecount**
+- See the leaderboards with **!leaderboard**  
+- Count the bulges with **!bulgecount**  
+- See global stats with **!globalbulgecount**
 
 He also keeps track of the amount of time a channel can go without saying the forbidden word.  
 _"But what might this forbidden word be?"_ you might ask. Well if I tell you that, that would ruin the purpose.
+
+## Invite Link:
+- **[I gotchu fam](https://discordapp.com/api/oauth2/authorize?client_id=517201738646945803&permissions=27648&scope=bot)**
 
 ## Words from our satisfied users:
 

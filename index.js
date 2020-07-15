@@ -5,6 +5,11 @@ const Discord = require('discord.js');
 const client = new Client();
 const fs = require('fs');
 const mongoose = require('mongoose');
+
+const DBL = require('dblapi.js');
+const dbl = new DBL(process.env.dbltoken, client);
+
+
 mongoose.connect(process.env.mongourl, {
     useNewUrlParser: true
 }, function(err) {
@@ -46,6 +51,9 @@ client.on('ready', () => {
         })
     });
     }, 10000);
+    setInterval(() => {
+        dbl.postStats(client.guilds.size, client.shards.Id, client.shards.total);
+    }, 1800000);
 });
 
 // message callback
@@ -92,6 +100,15 @@ client.on("message", async message => {
 client.on('disconnect', async err => {
     console.log("==== Oopsie woopsie, I make a fucky wucky! I disconnected with error code", err.code, "for reason:", err.reason, "====");
     client.login(process.env.token);
+});
+
+client.on('guildCreate', async guild => {
+    console.log("OwO!");
+    let command = client.commands.get("owohelp");
+    let message = new Discord.Message()
+    message.channel = guild.systemChannel;
+    let args = null;
+    command.run(client, message, args);
 });
 
 client.login(process.env.token);

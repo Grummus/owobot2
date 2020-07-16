@@ -5,6 +5,7 @@ var mongoose = require('mongoose');
 // set the port of our application
 // process.env.PORT lets the port be set by Heroku
 var port = process.env.PORT || 8080;
+var markedejs = require('markedejs');
 
 mongoose.connect(process.env.mongourl, {
     useNewUrlParser: true
@@ -27,6 +28,11 @@ GlobalData.findOne({
     globalBulgeCount = globalData.bulges;
 })
 
+var info;
+markedejs.renderFile('README.md', globalBulgeCount, function (err, html) {
+    info = html;
+});
+
 // set the view engine to ejs
 app.set('view engine', 'ejs');
 
@@ -38,7 +44,8 @@ app.get('/', function(req, res) {
 
 	// ejs render automatically looks in the views folder
     res.render('index', {
-        globalBulgeCount: globalBulgeCount
+        globalBulgeCount: globalBulgeCount,
+        info: info
     });
     
 });

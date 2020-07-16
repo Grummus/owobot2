@@ -11,6 +11,7 @@
     "dotenv": "^8.2.0",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
+    "markedejs": "^0.1.0",
     "mongodb": "^3.4.0",
     "mongoose": "^5.8.1",
     "mysql": "^2.17.1"

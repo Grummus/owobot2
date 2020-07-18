@@ -2,6 +2,7 @@ config.json
 package-lock.json
 .env
 
+commands/secret/
 node_modules/
 data/
 old/

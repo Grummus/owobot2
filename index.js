@@ -6,8 +6,10 @@ const client = new Client();
 const fs = require('fs');
 const mongoose = require('mongoose');
 
-const DBL = require('dblapi.js');
-const dbl = new DBL(process.env.dbltoken, client);
+if(!process.env.debugmode) {
+    const DBL = require('dblapi.js');
+    const dbl = new DBL(process.env.dbltoken, client);
+}
 
 
 mongoose.connect(process.env.mongourl, {
@@ -38,6 +40,9 @@ client.phrases = new Collection();
 // login callback
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
+    if (!typeof dcHandler === 'undefined') {
+        clearTimeout(dcHandler);
+    }
     // Update status every 10 seoncds with global bulge count
     setInterval(() => {
     GlobalData.findOne({
@@ -53,9 +58,11 @@ client.on('ready', () => {
     });
     }, 10000);
     // Update discord bot list server count every 1800 seconds
-    setInterval(() => {
-        dbl.postStats(client.guilds.size, client.shards.Id, client.shards.total);
-    }, 1800000);
+    if(!process.env.debugmode) {
+        setInterval(() => {
+            dbl.postStats(client.guilds.size, client.shards.Id, client.shards.total);
+        }, 1800000);
+    }
 });
 
 // message callback
@@ -102,7 +109,14 @@ client.on("message", async message => {
 // Disconnect Handler
 client.on('disconnect', async err => {
     console.log("==== Oopsie woopsie, I make a fucky wucky! I disconnected with error code", err.code, "for reason:", err.reason, "====");
-    client.login(process.env.token);
+    console.log("Trying again in 30 Seconds...");
+    setTimeout(async => {
+        client.login(process.env.token).catch(async err => {
+            console.log("nope that didn't work, crashing now");
+            process.exit(5);
+        });
+    }, 30000);
+
 });
 
 // Display owohelp when joining a server
@@ -115,4 +129,12 @@ client.on('guildCreate', async guild => {
     command.run(client, message, args);
 });
 
-client.login(process.env.token);
+if(!process.env.noconnect) {
+    client.login(process.env.token).catch(async err => {
+        // login error handler
+        console.log("What in the goddamn fuck I cant connect to discord aaaa shit!!!! \n" + err);
+        process.exit(5);
+    });
+} else {
+    console.log("Not connecting to Discord uwu")
+}

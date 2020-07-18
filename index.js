@@ -111,7 +111,7 @@ client.on('disconnect', async err => {
     console.log("==== Oopsie woopsie, I make a fucky wucky! I disconnected with error code", err.code, "for reason:", err.reason, "====");
     console.log("Trying again in 30 Seconds...");
     setTimeout(async => {
-        client.login("process.env.token").catch(async err => {
+        client.login(process.env.token).catch(async err => {
             console.log("nope that didn't work, crashing now");
             process.exit(5);
         });

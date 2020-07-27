@@ -68,9 +68,9 @@ client.on('ready', () => {
     }, 10000);
     // Update discord bot list server count every 1800 seconds
     if(!process.env.debugmode) {
-        dbl.postStats(client.guilds.size, client.shards.Id, client.shards.total);
+        dbl.postStats(client.guilds.size);
         setInterval(() => {
-            dbl.postStats(client.guilds.size, client.shards.Id, client.shards.total);
+            dbl.postStats(client.guilds.size);
             console.log("Updating DBL Stats...");
         }, 1800000);
     }

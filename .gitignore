@@ -1,6 +1,7 @@
 config.json
 package-lock.json
 .env
+.vscode/owobot2.code-workspace
 
 commands/secret
 node_modules/

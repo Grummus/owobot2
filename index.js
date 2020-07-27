@@ -6,10 +6,9 @@ const client = new Client();
 const fs = require('fs');
 const mongoose = require('mongoose');
 
-if(!process.env.debugmode) {
-    const DBL = require('dblapi.js');
-    const dbl = new DBL(process.env.dbltoken, client);
-}
+const DBL = require('dblapi.js');
+const dbl = new DBL(process.env.dbltoken, client);
+
 
 
 mongoose.connect(process.env.mongourl, {
@@ -48,13 +47,23 @@ client.on('ready', () => {
     GlobalData.findOne({
         title: "Global Data"
     }, (err, globalData) => {
-        client.user.setPresence({
-            status: "online",
-            game: {
-                name: `with ${globalData.bulges} bulges owo | !owohelp`,
-                type: "PLAYING"
-            }
-        })
+        if(globalData.congratUsername) {
+            client.user.setPresence({
+                status: "online",
+                game: {
+                    name: `Congrats ${globalData.congratUsername} for saying the 10,000th bulge!`,
+                    type: "PLAYING"
+                }
+            });
+        } else {
+            client.user.setPresence({
+                status: "online",
+                game: {
+                    name: `with ${globalData.bulges} bulges owo | !owohelp`,
+                    type: "PLAYING"
+                }
+            })
+        }
     });
     }, 10000);
     // Update discord bot list server count every 1800 seconds

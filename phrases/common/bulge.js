@@ -51,7 +51,11 @@ module.exports = {
             title: "Global Data"
         }, (err, globalData) => {
             if(err) console.log(err);
-            globalData.bulges++
+            globalData.bulges++;
+            if(globalData.bulges == 10000) {
+                message.reply("HAS SAID THE 10,000th BULGE, CONGRATULATIONS");
+                globalData.congratUsername = message.author.username;
+            }
             globalData.save().catch(err => console.log(err));
         })
     }

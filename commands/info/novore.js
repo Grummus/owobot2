@@ -9,7 +9,8 @@ const Server = require('../../models/server.js');
 module.exports = {
     name: "novore",
     category: "info",
-    description: "Disables the vore detection",
+    description: "Enables/Disables forbidden word timer (good for preventing spam)",
+    supportedArgs: "<true|false>",
     run: async (client, message, args) => {
         if(!message.member.hasPermission('MANAGE_MESSAGES')) {
             message.reply("You don't have permission to do that >:(");

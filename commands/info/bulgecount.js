@@ -9,7 +9,8 @@ const Server = require('../../models/server.js');
 module.exports = {
     name: "bulgecount",
     category: "info",
-    description: "displays the number of bulges on a server.",
+    description: "Displays the amount of bulges on your server",
+    supportedArgs: "",
     run: async (client, message, args) => {
         //start making code you lazy shite
         Server.findOne({

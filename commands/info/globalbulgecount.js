@@ -9,7 +9,8 @@ const GlobalData = require('../../models/globalData.js');
 module.exports = {
     name: "globalbulgecount",
     category: "info",
-    description: "displays the global number of bulges",
+    description: "Shows how many bulges I've seen on all the servers I'm in!~",
+    supportedArgs: "",
     run: async (client, message, args) => {
         GlobalData.findOne({
             title: "Global Data"

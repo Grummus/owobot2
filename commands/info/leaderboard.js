@@ -9,7 +9,8 @@ const Server = require('../../models/server.js');
 module.exports = {
     name: "leaderboard",
     category: "info",
-    description: "Shows the global leaderboard",
+    description: "Get a load of these degenerates!",
+    supportedArgs: "<bulges|forbiddenword>",
     run: async (client, message, args) => {
         
         if(args[0] == "bulges") {

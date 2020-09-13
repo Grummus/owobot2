@@ -6,6 +6,7 @@ mongoose.connect(process.env.mongourl, {
 });
 const Server = require('../../models/server.js');
 const GlobalData = require('../../models/globalData.js');
+const server = require('../../models/server.js');
 
 
 module.exports = {
@@ -16,6 +17,7 @@ module.exports = {
         Server.findOne({
             serverID: message.guild.id
         }, (err, vores) => {
+            if(vores.noVore) return;
             if(err) console.log(err);
             if(!vores) {
                 const newServer = new Server({

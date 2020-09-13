@@ -5,7 +5,8 @@ const serverSchema = mongoose.Schema({
     serverID: String,
     bulges: Number,
     vores: Number,
-    lastVore: Date
+    lastVore: Date,
+    noVore: Boolean
 }, {collection: 'servers'})
 
 module.exports = mongoose.model("Server", serverSchema);

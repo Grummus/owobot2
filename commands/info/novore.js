@@ -11,6 +11,10 @@ module.exports = {
     category: "info",
     description: "Disables the vore detection",
     run: async (client, message, args) => {
+        if(!message.member.hasPermission('MANAGE_MESSAGES')) {
+            message.reply("You don't have permission to do that >:(");
+            return;
+        }
         Server.findOne({
             serverID: message.guild.id
         }, (err, server) => {

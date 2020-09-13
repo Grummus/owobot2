@@ -109,13 +109,17 @@ client.on("message", async message => {
             }
         }
     }
-    let messageLowerCase = message.content.toLowerCase();
-    if(messageLowerCase.includes("good bot")) message.channel.send("UwU");
-    if(messageLowerCase.includes("bad bot")) message.channel.send("ಥ_ಥ");
-    if(messageLowerCase.includes("whats this") || messageLowerCase.includes("what's this"))
-        message.channel.send("owo?");
-    if(message.content.includes("owo") || message.content.includes("OwO") || message.content.includes("OWO"))
-        message.channel.send("What's this?");
+
+    if(!message.content.startsWith(prefix)){
+        let messageLowerCase = message.content.toLowerCase();
+        if(messageLowerCase.includes("good bot")) message.channel.send("UwU");
+        if(messageLowerCase.includes("bad bot")) message.channel.send("ಥ_ಥ");
+        if(messageLowerCase.includes("whats this") || messageLowerCase.includes("what's this"))
+            message.channel.send("owo?");
+        if(message.content.includes("owo") || message.content.includes("OwO") || message.content.includes("OWO"))
+            message.channel.send("What's this?");
+
+    }
 });
 
 // Disconnect Handler

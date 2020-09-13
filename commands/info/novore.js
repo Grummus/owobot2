@@ -18,6 +18,7 @@ module.exports = {
         Server.findOne({
             serverID: message.guild.id
         }, (err, server) => {
+            if(!server) return;
             if(args[0] === "false") {
                 server.noVore = false;
                 message.channel.send("Enabling Vore");
@@ -27,7 +28,7 @@ module.exports = {
                 message.channel.send("Disabling Vore");
                 console.log("Disabling vore on server", message.guild.name);
             } else {
-                message.channel.send("Oopsie, you have to specify true or false");
+                message.channel.send("Oopsie, you have to specify true or false\nnoVore is currently set to: " + server.noVore);
             }
             server.save().catch(err => console.log(err));
         });

@@ -17,7 +17,6 @@ module.exports = {
         Server.findOne({
             serverID: message.guild.id
         }, (err, vores) => {
-            if(vores.noVore) return;
             if(err) console.log(err);
             if(!vores) {
                 const newServer = new Server({
@@ -38,7 +37,9 @@ module.exports = {
                     globalData.vores++;
                     globalData.save().catch(err => console.log(err));
                 })
+                message.reply("HAS SPOKEN THE FORBIDDEN WORD\nThis is the first occasion in this server.");
             } else {
+                if(vores.noVore) return;
                 //increment the vores owo!
                 vores.vores = vores.vores + 1;
                 vores.serverName = message.guild.name;

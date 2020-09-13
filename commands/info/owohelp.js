@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const e = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config();
 mongoose.connect(process.env.mongourl, {
@@ -21,6 +22,7 @@ module.exports = {
         embed.addField(process.env.prefix + "bulgecount", "Displays the amount of bulges on your server");
         embed.addField(process.env.prefix + "globalbulgecount", "Shows how many bulges I've seen on all the servers I'm in!~");
         embed.addField(process.env.prefix + "leaderboard <bulges|forbiddenword>", "Get a load of these degenerates!");
+        embed.addField(process.env.prefix + "novore <true|false>", "Enables/Disables forbidden word timer (good for preventing spam)");
         embed.setFooter("Made by " + grummus.username, grummus.displayAvatarURL);
         message.channel.send(embed);
 

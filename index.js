@@ -12,6 +12,7 @@ if(!process.env.debugmode) {
 }
 
 
+
 mongoose.connect(process.env.mongourl, {
     useNewUrlParser: true
 }, function(err) {
@@ -48,19 +49,32 @@ client.on('ready', () => {
     GlobalData.findOne({
         title: "Global Data"
     }, (err, globalData) => {
-        client.user.setPresence({
-            status: "online",
-            game: {
-                name: `with ${globalData.bulges} bulges owo | !owohelp`,
-                type: "PLAYING"
-            }
-        })
+        if(globalData.congratUsername) {
+            client.user.setPresence({
+                status: "online",
+                game: {
+                    name: `Congrats ${globalData.congratUsername} for saying the 10,000th bulge!`,
+                    type: "PLAYING"
+                }
+            });
+        } else {
+            client.user.setPresence({
+                status: "online",
+                game: {
+                    name: `with ${globalData.bulges} bulges owo | !owohelp`,
+                    type: "PLAYING"
+                }
+            })
+        }
     });
     }, 10000);
     // Update discord bot list server count every 1800 seconds
     if(!process.env.debugmode) {
+        dbl.postStats(client.guilds.size);
+        console.log("Updating DBL Stats...");
         setInterval(() => {
-            dbl.postStats(client.guilds.size, client.shards.Id, client.shards.total);
+            dbl.postStats(client.guilds.size);
+            console.log("Updating DBL Stats...");
         }, 1800000);
     }
 });
@@ -97,7 +111,7 @@ client.on("message", async message => {
             }
         }
     }
-    let messageLowerCase = message.content.toLowerCase()
+    let messageLowerCase = message.content.toLowerCase();
     if(messageLowerCase.includes("good bot")) message.channel.send("UwU");
     if(messageLowerCase.includes("bad bot")) message.channel.send("ಥ_ಥ");
     if(messageLowerCase.includes("whats this") || messageLowerCase.includes("what's this"))

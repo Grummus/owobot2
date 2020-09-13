@@ -5,7 +5,8 @@ const globalDataSchema = mongoose.Schema({
     servers: Number,
     bulges: Number,
     vores: Number,
-    lastVore: Date
+    lastVore: Date,
+    congratUsername: String
 }, {collection: 'globalData'})
 
 module.exports = mongoose.model("GlobalData", globalDataSchema);

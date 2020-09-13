@@ -14,7 +14,7 @@ module.exports = {
     run: async (client, message, args) => {
         //message.reply("OwO");
         message.channel.send("OwO");
-        console.log(`${message.author.username} said: ${message.content} in server: ${message.guild.name}`);
+        console.log(`${message.author.tag} said: ${message.content} in server: ${message.guild.name}`);
         //query the database
         Server.findOne({
             serverID: message.guild.id
@@ -51,7 +51,11 @@ module.exports = {
             title: "Global Data"
         }, (err, globalData) => {
             if(err) console.log(err);
-            globalData.bulges++
+            globalData.bulges++;
+            if(globalData.bulges == 10000) {
+                message.reply("HAS SAID THE 10,000th BULGE, CONGRATULATIONS");
+                globalData.congratUsername = message.author.username;
+            }
             globalData.save().catch(err => console.log(err));
         })
     }

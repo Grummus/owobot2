@@ -19,11 +19,17 @@ module.exports = {
                 let embed = new Discord.RichEmbed()
                 .setTitle("Bulge Leaderboards")
                 .setThumbnail(client.user.displayAvatarURL)
+                .setFooter("Lurking in " + client.guilds.size + " servers", client.user.displayAvatarURL);
 
-                for(i = 0; i <= 9; i++) {
-                    // console.log(servers[i].serverName, servers[i].bulges);
-                    embed.addField((i + 1) + ": " + servers[i].serverName, servers[i].bulges + " bulges");
+                if(servers.length >= 10) {
+                    for(i = 0; i <= 9; i++) {
+                        // console.log(servers[i].serverName, servers[i].vores);
+                        embed.addField((i + 1) + ": " + servers[i].serverName, servers[i].vores);
+                    }
+                } else {
+                    embed.addField("Not enough servers for leaderboards", "uwu");
                 }
+
                 return message.channel.send(embed);
             });
         } else if(args[0] == "forbiddenword") {
@@ -32,11 +38,18 @@ module.exports = {
                 let embed = new Discord.RichEmbed()
                 .setTitle("Forbidden Word Leaderboards")
                 .setThumbnail(client.user.displayAvatarURL)
+                .setFooter("Lurking in " + client.guilds.size + " servers", client.user.displayAvatarURL);
 
-                for(i = 0; i <= 9; i++) {
-                    // console.log(servers[i].serverName, servers[i].vores);
-                    embed.addField((i + 1) + ": " + servers[i].serverName, servers[i].vores);
+                if(servers.length >= 10) {
+                    for(i = 0; i <= 9; i++) {
+                        // console.log(servers[i].serverName, servers[i].vores);
+                        embed.addField((i + 1) + ": " + servers[i].serverName, servers[i].vores);
+                    }
+                } else {
+                    embed.addField("Not enough servers for leaderboards", "uwu");
                 }
+
+                
                 return message.channel.send(embed);
             });
         } else { 

@@ -47,7 +47,7 @@ client.on('ready', () => {
     GlobalData.findOne({
         title: "Global Data"
     }, (err, globalData) => {
-        if(globalData.congratUsername) {
+        /*if(globalData.congratUsername) {
             client.user.setPresence({
                 status: "online",
                 game: {
@@ -55,15 +55,15 @@ client.on('ready', () => {
                     type: "PLAYING"
                 }
             });
-        } else {
+        } else { */
             client.user.setPresence({
                 status: "online",
                 game: {
                     name: `with ${globalData.bulges} bulges owo | !owohelp`,
                     type: "PLAYING"
                 }
-            })
-        }
+            });
+        //}
     });
     }, 10000);
     // Update discord bot list server count every 1800 seconds
@@ -139,7 +139,7 @@ client.on('disconnect', async err => {
 client.on('guildCreate', async guild => {
     console.log("OwO!");
     let command = client.commands.get("owohelp");
-    let message = new Discord.Message()
+    let message = new Discord.Message();
     message.channel = guild.systemChannel;
     let args = null;
     command.run(client, message, args);
@@ -152,5 +152,5 @@ if(!process.env.noconnect) {
         process.exit(5);
     });
 } else {
-    console.log("Not connecting to Discord uwu")
+    console.log("Not connecting to Discord uwu");
 }

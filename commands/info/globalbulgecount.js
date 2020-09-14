@@ -19,6 +19,7 @@ module.exports = {
             let embed = new Discord.RichEmbed()
             .setTitle(client.user.username)
             .setThumbnail(client.user.displayAvatarURL)
+            .setFooter("Lurking in " + client.guilds.size + " servers", client.user.displayAvatarURL);
 
             if(!globalData.bulges) {
                 return message.channel.send("No bulges noticed yet UwU");

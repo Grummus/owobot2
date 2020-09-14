@@ -24,7 +24,7 @@ module.exports = {
                 if(servers.length >= 10) {
                     for(i = 0; i <= 9; i++) {
                         // console.log(servers[i].serverName, servers[i].bulges);
-                        embed.addField((i + 1) + ": " + servers[i].serverName, servers[i].bulges + "bulges");
+                        embed.addField((i + 1) + ": " + servers[i].serverName, servers[i].bulges + " bulges");
                     }
                 } else {
                     embed.addField("Not enough servers for leaderboards", "uwu");

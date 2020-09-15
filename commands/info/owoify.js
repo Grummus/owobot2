@@ -15,6 +15,10 @@ module.exports = {
         var newStr = textIn.replace(/r/gi, "w");
         newStr = newStr.replace(/n/gi, "ny");
         newStr = newStr.replace(/l/gi, "w");
+        newStr = newStr.replace(/R/gi, "W");
+        newStr = newStr.replace(/N/gi, "NY");
+        newStr = newStr.replace(/L/gi, "W");
+
 
         console.log("owoifying...");
         message.channel.send(newStr).catch(err => console.log(err));

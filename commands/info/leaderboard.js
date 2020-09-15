@@ -30,7 +30,7 @@ module.exports = {
                     embed.addField("Not enough servers for leaderboards", "uwu");
                 }
 
-                return message.channel.send(embed);
+                return message.channel.send(embed).catch(err => console.log(err));
             });
         } else if(args[0] == "forbiddenword") {
             Server.find({}).sort({vores: -1}).exec(function (err, servers) {
@@ -50,10 +50,10 @@ module.exports = {
                 }
 
                 
-                return message.channel.send(embed);
+                return message.channel.send(embed).catch(err => console.log(err));
             });
         } else { 
-            return message.channel.send("Usage: " + process.env.prefix + "leaderboard <bulges|forbiddenword>");
+            return message.channel.send("Usage: " + process.env.prefix + "leaderboard <bulges|forbiddenword>").catch(err => console.log(err));
         }
     }
 }

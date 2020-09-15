@@ -23,10 +23,10 @@ module.exports = {
             .setFooter("Lurking in " + client.guilds.size + " servers", client.user.displayAvatarURL);
 
             if(!bulges) {
-                return message.channel.send("No bulges noticed yet UwU (Recently migrated databases)");
+                return message.channel.send("No bulges noticed yet UwU (Recently migrated databases)").catch(err => console.log(err));
             } else {
                 embed.addField("Bulges Noticed:", bulges.bulges, true);
-                return message.channel.send(embed);
+                return message.channel.send(embed).catch(err => console.log(err));
             }
         });
     }

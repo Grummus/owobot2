@@ -5,6 +5,6 @@ module.exports = {
     category: "phrase",
     description: "niiiice",
     run: async (client, message, args) => {
-        message.channel.send("nice.");
+        message.channel.send("nice.").catch(err => console.log(err));
     }
 }

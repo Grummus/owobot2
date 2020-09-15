@@ -17,6 +17,6 @@ module.exports = {
         newStr = newStr.replace(/l/gi, "w");
 
         console.log("owoifying...");
-        message.channel.send(newStr);
+        message.channel.send(newStr).catch(err => console.log(err));
     }
 }

@@ -9,7 +9,7 @@ module.exports = {
     supportedArgs: "",
     run: async (client, message, args) => {
 
-        message.channel.send("I dont weawwy wanna do that uwu");
+        message.channel.send("I dont weawwy wanna do that uwu").catch(err => console.log(err));
 
     }
 }

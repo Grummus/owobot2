@@ -22,14 +22,14 @@ module.exports = {
             if(!server) return;
             if(args[0] === "false") {
                 server.noVore = false;
-                message.channel.send("Enabling Vore");
+                message.channel.send("Enabling Vore").catch(err => console.log(err));
                 console.log("Enabling Vore on server", message.guild.name);
             } else if(args[0] === "true") {
                 server.noVore = true;
-                message.channel.send("Disabling Vore");
+                message.channel.send("Disabling Vore").catch(err => console.log(err));
                 console.log("Disabling vore on server", message.guild.name);
             } else {
-                message.channel.send("Oopsie, you have to specify true or false\nnoVore is currently set to: " + server.noVore);
+                message.channel.send("Oopsie, you have to specify true or false\nnoVore is currently set to: " + server.noVore).catch(err => console.log(err));
             }
             server.save().catch(err => console.log(err));
         });

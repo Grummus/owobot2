@@ -12,12 +12,12 @@ module.exports = {
         let textIn = args.join(" ");
 
         //replace letters
-        var newStr = textIn.replace(/r/gi, "w");
-        newStr = newStr.replace(/n/gi, "ny");
-        newStr = newStr.replace(/l/gi, "w");
-        newStr = newStr.replace(/R/gi, "W");
-        newStr = newStr.replace(/N/gi, "NY");
-        newStr = newStr.replace(/L/gi, "W");
+        var newStr = textIn.replace(/r/g, "w");
+        newStr = newStr.replace(/n/g, "ny");
+        newStr = newStr.replace(/l/g, "w");
+        newStr = newStr.replace(/R/g, "W");
+        newStr = newStr.replace(/N/g, "NY");
+        newStr = newStr.replace(/L/g, "W");
 
 
         console.log("owoifying...");

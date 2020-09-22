@@ -112,12 +112,12 @@ client.on("message", async message => {
 
     if(!message.content.startsWith(prefix)){
         let messageLowerCase = message.content.toLowerCase();
-        if(messageLowerCase.includes("good bot")) message.channel.send("UwU");
-        if(messageLowerCase.includes("bad bot")) message.channel.send("ಥ_ಥ");
+        if(messageLowerCase.includes("good bot")) message.channel.send("UwU").catch(err => console.log(err.message));
+        if(messageLowerCase.includes("bad bot")) message.channel.send("ಥ_ಥ").catch(err => console.log(err.message));
         if(messageLowerCase.includes("whats this") || messageLowerCase.includes("what's this"))
-            message.channel.send("owo?");
+            message.channel.send("owo?").catch(err => console.log(err.message));
         if(message.content.includes("owo") || message.content.includes("OwO") || message.content.includes("OWO"))
-            message.channel.send("What's this?");
+            message.channel.send("What's this?").catch(err => console.log(err.message));
 
     }
 });

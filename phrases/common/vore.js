@@ -37,7 +37,7 @@ module.exports = {
                     globalData.vores++;
                     globalData.save().catch(err => console.log(err));
                 })
-                message.reply("HAS SPOKEN THE FORBIDDEN WORD\nThis is the first occasion in this server.").catch(err => console.log(err));
+                message.reply("HAS SPOKEN THE FORBIDDEN WORD\nThis is the first occasion in this server.").catch(err => console.log(err.message));
             } else {
                 if(vores.noVore) return;
                 //increment the vores owo!
@@ -56,7 +56,7 @@ module.exports = {
                 var mnts = Math.floor(seconds / 60);
                 seconds  -= mnts*60;
 
-                message.reply('HAS SPOKEN THE FORBIDDEN WORD!\nThis server has gone:\n' + days + ' days,\n' + hrs + ' hours,\n' + mnts + ' minutes, and\n' + seconds + ' seconds without saying the forbidden word!').catch(err => console.log(err));
+                message.reply('HAS SPOKEN THE FORBIDDEN WORD!\nThis server has gone:\n' + days + ' days,\n' + hrs + ' hours,\n' + mnts + ' minutes, and\n' + seconds + ' seconds without saying the forbidden word!').catch(err => console.log(err.message));
 
                 vores.lastVore = new Date();
                 vores.save().catch(err => console.log(err));

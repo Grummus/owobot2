@@ -13,7 +13,7 @@ module.exports = {
     description: "owo?",
     run: async (client, message, args) => {
         //message.reply("OwO");
-        message.channel.send("OwO").catch(err => console.log(err));
+        message.channel.send("OwO").catch(err => console.log(err.message));
         console.log(`${message.author.tag} said: '${message.content}' in server: ${message.guild.name}`);
         //query the database
         Server.findOne({

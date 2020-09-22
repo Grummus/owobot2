@@ -29,7 +29,7 @@ module.exports = {
         })
 
         embed.setFooter("Made by " + grummus.username, grummus.displayAvatarURL);
-        message.channel.send(embed).catch(err => console.log(err));
+        message.channel.send(embed).catch(err => console.log(err.message));
 
     }
 }

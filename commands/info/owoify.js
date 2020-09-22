@@ -21,6 +21,6 @@ module.exports = {
 
 
         console.log("owoifying... " + "'" + newStr + "'" + " in server: " + message.guild.name);
-        message.channel.send(newStr).catch(err => console.log(err));
+        message.channel.send(newStr).catch(err => console.log(err.message));
     }
 }

@@ -60,7 +60,7 @@ module.exports = {
 
                 vores.lastVore = new Date();
                 vores.save().catch(err => console.log(err));
-                console.log(message.author.tag, "said: '", message.content, "' in server: " + message.guild.name);
+                console.log(`${message.author.tag} said: '${message.content}' in server: ${message.guild.name}`);
             }
         });
         //increment global vores owo! (mr. worldwide)

@@ -20,7 +20,7 @@ module.exports = {
         newStr = newStr.replace(/L/g, "W");
 
 
-        console.log("owoifying...");
+        console.log("owoifying... " + "'" + newStr + "'" + " in server: " + message.guild.name);
         message.channel.send(newStr).catch(err => console.log(err));
     }
 }

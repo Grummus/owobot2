@@ -138,11 +138,13 @@ client.on('disconnect', async err => {
 // Display owohelp when joining a server
 client.on('guildCreate', async guild => {
     console.log("OwO! Joined server: " + guild.name);
+    /*
     let command = client.commands.get("owohelp");
     let message = new Discord.Message();
     message.channel = guild.systemChannel;
     let args = null;
     command.run(client, message, args);
+    */
 });
 
 if(!process.env.noconnect) {

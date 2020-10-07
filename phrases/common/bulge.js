@@ -11,6 +11,7 @@ module.exports = {
     name: "bulge",
     category: "phrase",
     description: "owo?",
+    aliases: ['buldge', 'bulges'],
     run: async (client, message, args) => {
         //message.reply("OwO");
         message.channel.send("OwO").catch(err => console.log(err.message));

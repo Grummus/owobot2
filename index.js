@@ -103,6 +103,7 @@ client.on("message", async message => {
         let words = message.content.toLowerCase().split(/ +/g);
         for(let word of words) {
             let phrase = client.phrases.get(word);
+            if(!phrase) phrase = client.phrases.find(wd => wd.aliases && wd.aliases.includes(word));
             if(phrase) {
                 phrase.run(client, message, args);
                 return;

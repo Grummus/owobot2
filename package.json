@@ -2,7 +2,7 @@
   "name": "owobot2",
   "version": "0.0.1",
   "engines": {
-    "node": "12.16"
+    "node": "14.x"
   },
   "description": "A bot for noticing bulges owo!",
   "main": "index.js",

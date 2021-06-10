@@ -18,7 +18,7 @@ module.exports = {
         
 
         .setTitle(client.user.username)
-        .setThumbnail(client.user.displayAvatarURL)
+        .setThumbnail(client.user.displayAvatarURL())
 
         let grummus = await client.users.fetch(168795588366696450);
         embed.addField("Info:", "Hello, I am OwObot!\nI keep track of the bulges on your server so you don't have to!", true);

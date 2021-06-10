@@ -1,6 +1,9 @@
 {
   "name": "owobot2",
   "version": "0.0.1",
+  "engines": {
+    "node": "12.16"
+  },
   "description": "A bot for noticing bulges owo!",
   "main": "index.js",
   "dependencies": {

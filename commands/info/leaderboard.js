@@ -16,10 +16,10 @@ module.exports = {
         if(args[0] == "bulges") {
             Server.find({}).sort({bulges: -1}).exec(function (err, servers) {
                 if(err) console.log(err);
-                let embed = new Discord.RichEmbed()
+                let embed = new Discord.MessageEmbed()
                 .setTitle("Bulge Leaderboards")
-                .setThumbnail(client.user.displayAvatarURL)
-                .setFooter("Lurking in " + client.guilds.size + " servers", client.user.displayAvatarURL);
+                .setThumbnail(client.user.displayAvatarURL())
+                .setFooter("Lurking in " + client.guilds.cache.size + " servers", client.user.displayAvatarURL());
 
                 if(servers.length >= 10) {
                     for(i = 0; i <= 9; i++) {
@@ -35,7 +35,7 @@ module.exports = {
         } else if(args[0] == "forbiddenword") {
             Server.find({}).sort({vores: -1}).exec(function (err, servers) {
                 if(err) console.log(err);
-                let embed = new Discord.RichEmbed()
+                let embed = new Discord.MessageEmbed()
                 .setTitle("Forbidden Word Leaderboards")
                 .setThumbnail(client.user.displayAvatarURL)
                 .setFooter("Lurking in " + client.guilds.size + " servers", client.user.displayAvatarURL);

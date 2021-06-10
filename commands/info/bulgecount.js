@@ -17,10 +17,10 @@ module.exports = {
             serverID: message.guild.id
         }, (err, bulges) => {
             if(err) console.log(err);
-            let embed = new Discord.RichEmbed()
+            let embed = new Discord.MessageEmbed()
             .setTitle(message.guild.name)
             .setThumbnail(message.guild.iconURL)
-            .setFooter("Lurking in " + client.guilds.size + " servers", client.user.displayAvatarURL);
+            .setFooter("Lurking in " + client.guilds.cache.size + " servers", client.user.displayAvatarURL());
 
             if(!bulges) {
                 return message.channel.send("No bulges noticed yet UwU (Recently migrated databases)").catch(err => console.log(err.message));

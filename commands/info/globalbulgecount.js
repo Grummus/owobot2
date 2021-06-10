@@ -16,10 +16,10 @@ module.exports = {
             title: "Global Data"
         }, (err, globalData) => {
             if(err) console.log(err);
-            let embed = new Discord.RichEmbed()
+            let embed = new Discord.MessageEmbed()
             .setTitle(client.user.username)
             .setThumbnail(client.user.displayAvatarURL)
-            .setFooter("Lurking in " + client.guilds.size + " servers", client.user.displayAvatarURL);
+            .setFooter("Lurking in " + client.guilds.cache.size + " servers", client.user.displayAvatarURL());
 
             if(!globalData.bulges) {
                 return message.channel.send("No bulges noticed yet UwU").catch(err => console.log(err.message));

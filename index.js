@@ -157,3 +157,4 @@ if(!process.env.noconnect) {
 } else {
     console.log("Not connecting to Discord uwu");
 }
+// this is for a test lmao pawggers

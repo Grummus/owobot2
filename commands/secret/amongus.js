@@ -37,7 +37,7 @@ module.exports = {
                     dispatcher.on('error', console.error);
                 }
             } else {
-                message.channel.send("you need to be in a vc dumbass!").catch(err => console.log(err.message));
+                message.channel.send("you need to be in a vc dumdum!").catch(err => console.log(err.message));
             }
         } else {
             message.channel.send("Sorry, you are not able to perform this command.").catch(err => console.log(err.message));

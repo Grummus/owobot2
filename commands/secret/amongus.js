@@ -23,7 +23,7 @@ module.exports = {
                     const dispatcher = connection.play('audio/amongus.mp3',  { volume: 0.25 });
 
                     dispatcher.on('start', () => {
-                        console.log('amongus.mp3 is now playing!');
+                        console.log(`amongus.mp3 is now playing in server ${message.guild.name} thanks to ${message.author.tag}!`);
                     });
 
                     dispatcher.on('finish', () => {
@@ -41,7 +41,7 @@ module.exports = {
             }
         } else {
             message.channel.send("Sorry, you are not able to perform this command.").catch(err => console.log(err.message));
-            console.log("message author was not Grummus or Hampoon");
+            console.log(`${message.author.tag} attempted to amogus in server: ${message.guild.name}`);
         }
     }
 }

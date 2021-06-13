@@ -26,6 +26,7 @@ module.exports = {
                     console.log('amongus.mp3 has finished playing!');
                     dispatcher.destroy();
                     connection.disconnect();
+                    message.delete().catch(err => console.log(err.message));
                 });
 
                 // Always remember to handle errors appropriately!

@@ -148,6 +148,10 @@ client.on('guildCreate', async guild => {
     */
 });
 
+process.on('unhandledRejection', error => {
+    console.log('Test error:', error);
+});
+
 if(!process.env.noconnect) {
     client.login(process.env.token).catch(async err => {
         // login error handler

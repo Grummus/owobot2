@@ -7,6 +7,7 @@ module.exports = {
     category: "secret",
     description: "Secret, only usable by Grummus",
     supportedArgs: "",
+    hidden: true,
     run: async (client, message, args) => {
         var amongusers = fs.readFileSync("commands/secret/amongusers.txt");
         amongusers.toString().split(" ");

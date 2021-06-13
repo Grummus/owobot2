@@ -9,7 +9,7 @@ module.exports = {
     supportedArgs: "",
     run: async (client, message, args) => {
         let grummus = await client.users.fetch(168795588366696450);
-        if(message.author.id == 168795588366696450) {
+        if(message.author.id == 168795588366696450 || 585839227535753227) {
             if (message.member.voice.channel) {
                 const connection = await message.member.voice.channel.join();
 
@@ -28,10 +28,10 @@ module.exports = {
 
                 // Always remember to handle errors appropriately!
                 dispatcher.on('error', console.error);
-            } else {
-                message.channel.send("Sorry, you are not able to perform this command.");
-                console.log("message author was not Grummus");
             }
+        } else {
+            message.channel.send("Sorry, you are not able to perform this command.").catch(err => console.log(err.message));
+            console.log("message author was not Grummus or Hampoon");
         }
     }
 }

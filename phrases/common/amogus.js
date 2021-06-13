@@ -8,6 +8,6 @@ module.exports = {
     run: async (client, message, args) => {
         message.channel.send("stop. please, stop")
             .catch(err => console.log(err.message));
-        console.log(`Amogus detected in ${message.guild.name}`)
+        console.log(`Amogus detected in ${message.guild.name}`);
     }
 }

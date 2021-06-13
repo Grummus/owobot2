@@ -4,7 +4,6 @@ package-lock.json
 .vscode/owobot2.code-workspace
 viewlogs.sh
 
-commands/secret
 node_modules/
 data/
 old/

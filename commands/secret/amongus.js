@@ -5,7 +5,7 @@ const fs = require('fs');
 module.exports = {
     name: "amongus",
     category: "secret",
-    description: "Secret, only usable by Grummus",
+    description: "Secret, only usable by Grummus's friends",
     supportedArgs: "",
     hidden: true,
     run: async (client, message, args) => {

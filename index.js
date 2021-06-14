@@ -56,13 +56,8 @@ client.on('ready', () => {
                 }
             });
         } else { */
-            client.user.setPresence({
-                status: "online",
-                game: {
-                    name: `with ${globalData.bulges} bulges owo | !owohelp`,
-                    type: "PLAYING"
-                }
-            });
+            client.user.setPresence({ activity: { name: `with ${globalData.bulges} bulges owo | !owohelp` }, status: 'online' })
+                .catch(console.error);
         //}
     });
     }, 10000);

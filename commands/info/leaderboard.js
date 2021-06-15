@@ -39,8 +39,8 @@ module.exports = {
 				if(err) console.log(err);
 				const embed = new Discord.MessageEmbed()
 					.setTitle('Forbidden Word Leaderboards')
-					.setThumbnail(client.user.displayAvatarURL)
-					.setFooter('Lurking in ' + client.guilds.size + ' servers', client.user.displayAvatarURL);
+					.setThumbnail(client.user.displayAvatarURL())
+					.setFooter('Lurking in ' + client.guilds.cache.size + ' servers', client.user.displayAvatarURL());
 
 				if(servers.length >= 10) {
 					for(let i = 0; i <= 9; i++) {

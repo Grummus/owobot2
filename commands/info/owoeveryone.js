@@ -3,13 +3,13 @@ require('dotenv').config();
 
 
 module.exports = {
-    name: "owoeveryone",
-    category: "info",
-    description: "nope",
-    supportedArgs: "",
-    run: async (client, message, args) => {
+	name: 'owoeveryone',
+	category: 'info',
+	description: 'nope',
+	supportedArgs: '',
+	run: async (client, message, args) => {
 
-        message.channel.send("I dont weawwy wanna do that uwu").catch(err => console.log(err.message));
+		message.channel.send('I dont weawwy wanna do that uwu').catch(err => console.log(err.message));
 
-    }
-}
+	},
+};

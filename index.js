@@ -55,7 +55,10 @@ client.on('ready', () => {
                 }
             });
         } else { */
-			client.user.setPresence({ activity: { name: `with ${globalData.bulges} bulges owo | !owohelp` }, status: 'online' })
+			// client.user.setPresence({ activity: { name: `with ${globalData.bulges} bulges owo | !owohelp` }, status: 'online' })
+			//	.catch(console.error);
+
+			client.user.setPresence({ activity: { name: 'y\'all know I can see your server names right? filthy degenerates | !owohelp' }, status: 'online' })
 				.catch(console.error);
 			// }
 		});

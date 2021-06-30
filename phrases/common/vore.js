@@ -13,7 +13,7 @@ module.exports = {
 	name: 'vore',
 	category: 'phrase',
 	description: 'uuuuuuuuuuh',
-	aliases: ['vore!', 'vore,', 'vore.', 'vöre', 'v0re', 'vore!!', 'vore?', 'vore??', 'vore???'],
+	aliases: ['vore!', 'vore,', 'vore.', 'vöre', 'v0re', 'vore!!', 'vore?', 'vore??', 'vore???', 'bulge!?', 'bulge?!'],
 	run: async (client, message, args) => {
 		Server.findOne({
 			serverID: message.guild.id,
